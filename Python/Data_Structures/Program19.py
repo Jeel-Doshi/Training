@@ -5,12 +5,15 @@
 input_list = [5, 2, 3, 5, 1, 5, 1, 2, 5, 5, 5]
 length = int(len(input_list)/2)
 
+occurence = {}
 
 for element in input_list:
-    counter = input_list.count(element)
-    
-    if counter > length:
-        majority_element = element
-        print(majority_element)
-        break
+    if element in occurence:
+        occurence[element] +=1
+    else:
+        occurence[element] = 1
 
+if occurence[element] > length:
+    print(element)
+    
+# Done

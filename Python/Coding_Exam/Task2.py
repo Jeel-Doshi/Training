@@ -7,6 +7,7 @@ for number in range(2, input_number):
     
     if input_number % number == 0:
         counter+=1
+        break
         
 
 if counter > 0:

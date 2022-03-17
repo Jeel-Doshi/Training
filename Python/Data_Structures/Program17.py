@@ -1,15 +1,25 @@
 # Print reverse string using recursion.
 
-input_str_list = list(input("Enter string to reverse "))
+input_str = input("Enter string to reverse ")
+length = len(input_str)
 
-def last_element(list1):
-    return list1[-1]
+# def rev(string):
+    
+#     if len(string) == 0:
+#         return rev(string)
+#     else:
+#         print(string[len(string)-1])
+        
+#         return string[len(string)-1] + rev(string[length])
 
-while len(input_str_list) > 0:
-    reversed_str = []
-    lastElement = last_element(input_str_list)
-    input_str_list.pop()
-    reversed_str.append(lastElement)
+# print(rev(input_str))
 
-    print(''.join(reversed_str),end='')
+def rev(string):
+    
+    string[length-1]
+
+    length -= 1
+    return rev(string[length])
+
+print(rev(input_str))
 

@@ -4,7 +4,7 @@ import math
 
 input_list = [1, 5, 1, 10, 50]
 
-#print(max(input_list))
+# print(max(input_list))
 
 for index in range(len(input_list)):
     store = input_list[index]

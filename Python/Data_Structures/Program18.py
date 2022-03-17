@@ -3,13 +3,17 @@
 input_list = [2, 5, 3, 1, 4, 9]
 result = []
 
+index = 0
 for index1 in range(len(input_list)):
     for index2 in range(index1+1,len(input_list)):
-        for index3 in range(index1+2,len(input_list)):
-            if index1 < index2 < index3 :
-                if input_list[index1] < input_list[index2] < input_list[index3]:
-                    summation = input_list[index1] + input_list[index2] + input_list[index3]
-                    result.append(summation)
+        if (index < index1 < index2) and (input_list[index] < input_list[index1] < input_list[index2]):
+            
+                addition = input_list[index] + input_list[index1] + input_list[index2]
+                result.append(addition)
+                
+else:
+    index+=1
 
 print(max(result))
 
+# Done
