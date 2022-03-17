@@ -3,8 +3,8 @@
 input_array = [1,9,9,9]
 number = 0
 
-for elements in range(len(input_array)):
-    number = number *10 + input_array[elements]
+for element in range(len(input_array)):
+    number = number *10 + input_array[element]
 
 # adding one
 addition = number + 1

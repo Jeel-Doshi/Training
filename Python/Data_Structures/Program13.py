@@ -3,12 +3,12 @@
 input_array = [5, 17, 2, 6, 3]
 output = []
 
-for elements in range(len(input_array)):
-    for next_elements in range(elements+1,len(input_array)):
-        if input_array[elements] < input_array[next_elements]:
+for element in range(len(input_array)):
+    for next_elements in range(element+1,len(input_array)):
+        if input_array[element] < input_array[next_elements]:
             break
         else:
-            output.append(input_array[elements])
+            output.append(input_array[element])
             break
 
 print(output + [input_array[-1]])

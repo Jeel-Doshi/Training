@@ -1,4 +1,4 @@
-# Count the occurrence of each element from a lelementst 
+# Count the occurrence of each element from a list 
 
 array = [1,2,3,4,5,6,2,3,1]
 

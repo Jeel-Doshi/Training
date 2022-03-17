@@ -182,3 +182,68 @@ Output : List with one added
 | Input        | Output       |
 | ------       | ------       |
 | [1, 9, 9, 9] | [2, 0, 0, 0] |
+
+
+### Calculate the sum of the major and minor diagonals of the given matrix
+
+
+Input  : Matrix of size NxN
+
+Output : Sum of major and minor diagnoals of giveb matrix 
+
+| Input                              | Output       |
+| ------                             | ------       |
+| [ [2, 0, 7],[4, 1, 9],[8, 1, -1] ] | 2, 16        |
+
+
+
+### Find the elements of the given list which are exactly the same as the entire product of the list except itself
+
+
+Input  : List of integers
+
+Output : Element from list which is product of entire list except itself 
+
+| Input             | Output  |
+| ------            | ------  |
+| [1, 5, 1, 10, 50] | 50      |
+| [1, 2, 4, 8, 1]   | 8       |
+
+
+### Print reverse string using recursion
+
+
+Input  : Input string
+
+Output : Reversed string 
+
+| Input           | Output       |
+| ------          | ------       |
+| helloworld      | dlrowolleh   |
+| good morning    | gninrom doog |
+
+
+### Find maximum sum of triplets in an array such than i < j < k and a[ i ] < a[ j ] < a[ k ]
+
+
+Input  : List of integers
+
+Output : Maximum sum of triplets with condition as i < j < k and a [ i ] < a[ j ] < a [ k ] 
+
+| Input              | Output |
+| ------             | ------ |
+| [2, 5, 3, 1, 4, 9] | 16     |
+
+
+### Find the majority element of the given list.
+### Majority element: count of the element > N/2
+### N = length of list
+
+                    
+Input  : List of integers
+
+Output : Majority element count 
+
+| Input                             | Output |
+| --------------------------------- | ------ |
+| [5, 2, 3, 5, 1, 5, 1, 2, 5, 5, 5] | 5      |
