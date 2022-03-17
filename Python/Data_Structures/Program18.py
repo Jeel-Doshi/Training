@@ -16,4 +16,3 @@ else:
 
 print(max(result))
 
-# Done

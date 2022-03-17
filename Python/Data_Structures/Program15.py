@@ -12,5 +12,3 @@ for index in range(len(matrix)):
 print(sum_major)
 print(sum_minor)
 
-
-# Done

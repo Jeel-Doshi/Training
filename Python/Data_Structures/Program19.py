@@ -16,4 +16,3 @@ for element in input_list:
 if occurence[element] > length:
     print(element)
     
-# Done
