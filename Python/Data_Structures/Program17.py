@@ -9,6 +9,7 @@ def rev(string,last_index):
 
     if last_index == 0:
         return string[last_index]
+        
     return string[last_index] + rev(string,last_index)
 
 print(rev(input_str,length))
