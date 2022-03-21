@@ -3,23 +3,12 @@
 input_str = input("Enter string to reverse ")
 length = len(input_str)
 
-# def rev(string):
+def rev(string,last_index):
     
-#     if len(string) == 0:
-#         return rev(string)
-#     else:
-#         print(string[len(string)-1])
-        
-#         return string[len(string)-1] + rev(string[length])
+    last_index -= 1
 
-# print(rev(input_str))
+    if last_index == 0:
+        return string[last_index]
+    return string[last_index] + rev(string,last_index)
 
-def rev(string):
-    
-    string[length-1]
-
-    length -= 1
-    return rev(string[length])
-
-print(rev(input_str))
-
+print(rev(input_str,length))
