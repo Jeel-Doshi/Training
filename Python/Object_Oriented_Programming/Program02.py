@@ -78,4 +78,3 @@ obj = Tiger("Lion")
 print(obj.get_name())
 print(obj.get_info())
 
-# Done

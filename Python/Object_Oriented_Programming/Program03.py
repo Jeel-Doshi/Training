@@ -72,5 +72,3 @@ if max(shuffle.winner) == shuffle.winner[0]:
     print("Winner is Player-1 with {} points ".format(max(shuffle.winner)))
 else:
     print("Winner is Player-2 with {} points ".format(max(shuffle.winner)))
-
-# Done
