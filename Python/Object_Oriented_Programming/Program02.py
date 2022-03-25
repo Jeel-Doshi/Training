@@ -24,7 +24,7 @@ class Wild(Animal):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am wild {Animal.get_info(self)}'
+        return f'I am wild {super().get_info()}'
 
 class Leopard(Wild):
 
@@ -32,7 +32,7 @@ class Leopard(Wild):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am Leopard {Wild.get_info(self)}'
+        return f'I am Leopard {super().get_info()}'
 
 class Tiger(Wild):
 
@@ -40,7 +40,7 @@ class Tiger(Wild):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am Tiger {Wild.get_info(self)}' 
+        return f'I am Tiger {super().get_info()}' 
 
 class pet(Animal):
 
@@ -48,7 +48,7 @@ class pet(Animal):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am pet {Animal.get_info(self)}' 
+        return f'I am pet {super().get_info()}' 
 
 class Dog(pet):
 
@@ -56,7 +56,7 @@ class Dog(pet):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am Dog {pet.get_info(self)}'
+        return f'I am Dog {super().get_info()}'
 
 class Canine(Animal):
 
@@ -64,7 +64,7 @@ class Canine(Animal):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am Canine {Animal.get_info(self)}'
+        return f'I am Canine {super().get_info()}'
 
 class Fox(Canine):
 
@@ -72,9 +72,9 @@ class Fox(Canine):
         return f'Hello..! My name is {self.name}.'
 
     def get_info(self):
-        return f'I am Fox {Canine.get_info(self)}' 
+        return f'I am Fox {super().get_info()}' 
 
-obj = Tiger("Lion")
+obj = Animal("Lion")
 print(obj.get_name())
 print(obj.get_info())
 

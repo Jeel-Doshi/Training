@@ -12,8 +12,8 @@ print("-------------------------------------------------------------------------
 flash = []
 while True:
         
-    word_input = input("Enter the name ")
-    meaning_input = input("Enter the meaning of word ")
+    word_input = input("Enter the name for flashcard ")
+    meaning_input = input("Enter the meaning of name ")
 
     class flashcard:           
 
@@ -36,6 +36,8 @@ while True:
             str(obj)
 
         else:
+            print('\n')
+            print("Your Flashcards ")
             flash1 = list(set(flash))
             n = 0
             while n < len(flash1) :
