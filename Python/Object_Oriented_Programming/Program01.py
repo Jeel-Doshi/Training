@@ -9,42 +9,40 @@ print("-------------------------------------------------------------------------
 print("WELCOME TO FLASHCARD APPLICATION...!!".center(80))
 print("----------------------------------------------------------------------------------------")
 
-flash = []
-while True:
-        
-    word_input = input("Enter the name for flashcard ")
-    meaning_input = input("Enter the meaning of name ")
-
-    class flashcard:           
-
+class flashcard:           
+        flash = []
         def __init__(self,word,meaning):
             self.word = word
             self.meaning = meaning
         
         def __str__(self):
             string = f'{ self.word } ({ self.meaning})'
-            flash.append(string)
+            obj.flash.append(string)
             return string
-    obj = flashcard(word_input, meaning_input)
-    str(obj)
-
+            
+while True:
+        
+    word_input = input("Enter the name for flashcard ")
+    meaning_input = input("Enter the meaning of name ")
+   
     try:
+        obj = flashcard(word_input, meaning_input)
+        str(obj)
         user_input = int(input("Enter 0, to add flashcard "))
     
         if user_input == 0:
-            obj = flashcard(word_input, meaning_input)
-            str(obj)
-
+            print(obj.flash)
         else:
             print('\n')
             print("Your Flashcards ")
-            flash1 = list(set(flash))
+            flash1 = list(set(obj.flash))
             n = 0
             while n < len(flash1) :
                 print(flash1[n])
                 n+=1
             break
 
-
     except (NameError,ValueError,TypeError):
         print("Error occurred and handled ")
+
+# Done

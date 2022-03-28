@@ -25,8 +25,8 @@
 
 from datetime import date
 current = date.today()
-current_year = current.year
-current_month = current.month
+current_year = str(current.year)
+current_month = str(current.month)
 
 class Person:
 
@@ -46,8 +46,7 @@ class Employee(Person):
         self.post = post
         super().__init__(name,dob,city,contact_no)
     
-
-data = {}
+data = []
 def user_input():
     name = input("Enter name of employee - ")
     dob = input("Enter date of birth seperated with '/' in dd/mm/yy format - ")
@@ -59,8 +58,10 @@ def user_input():
     department = input("Enter department - ")
     post = input("Enter post of employee - ")
     print("---------------------------------------")
-
-    data[name] = {'Name':name, 'Dob':dob, 'City':city, 'Contact_No':contact_no, 'Employee_Id':employee_id, 'Joining_Date':joining_date, 'Salary':salary, 'Department':department, 'Post':post }  
+    
+    global obj_Employee
+    obj_Employee = Employee(name,dob,city,contact_no,employee_id,joining_date,salary,department,post)
+    data.append(obj_Employee)
 
 class employee_manager:
 
@@ -70,104 +71,91 @@ class employee_manager:
 
         def remove_employee(self):
             remove_employee = input("Enter the name of employee to remove ")
-            if remove_employee in data:
-                data.pop(remove_employee) 
-                return "Employee removed successfully..! "
-            else:
-                return "No Employee present "
+            for object in data:
+                if remove_employee in object.name:
+                    data.remove(object) 
+                    return "Employee removed successfully..! "
+                else:
+                    return "No Employee present "
 
         def all_employee_list(self):
             print("List of all employees are as follows: ")
-            for employee in data:
-                print(employee)
+            for object in data:
+                print(object.name)
             print()
 
         def employee_by_name(self):
             employee_name = input("Enter the name of employee ")
-            if employee_name in data:
-                for keys in data[employee_name]:
-                    print(keys,' - ', data[employee_name][keys])
-                print()
-            else:
-                print("No employee with name {} is present ".format(employee_name))
+            for object in data:
+                if employee_name in object.name:
+                    print("Name {}\nDob {}\nCity {}\nConatact No {}\nEmployee Id {}".format(object.name,object.dob,object.city,object.contact_no,object.employee_id))
+                else:
+                    print("No employee with name {} is present ".format(employee_name))
 
         def employee_by_department(self):
             employee_department = input("Enter department to find employee ")
-            for key in data:
-                for value in data[key]:
-                    if data[key][value] == employee_department:
-                        print(key)
+            for object in data:
+                if employee_department == object.department:
+                    print(object.name)
         
         def employee_salary(self):
             try:
-                salary_above = int(input("Enter amount to find employees with salary above ")) # valueError
-            
+                salary_above = int(input("Enter amount to find employees with salary above "))             
                 if salary_above:
-                    for key in data:
-                        for value in data[key]:
-                            if value == 'Salary':
-                                if int(data[key][value]) > salary_above:
-                                    print(key)
-                                break
+                    for object in data:
+                        if int(object.salary) > salary_above :
+                            print(object.name)
+                                
                 else:
                     salary_range1 = int(input("Enter lower range of amount "))
                     salary_range2 = int(input("Enter upper range of amount "))
-                    for key in data:
-                        for value in data[key]:
-                            if value == 'Salary':
-                                if salary_range1 < int(data[key][value]) < salary_range2:
-                                    print(key)
-                                break
+                    for object in data:
+                        if salary_range1 < int(object.salary) < salary_range2:
+                            print(object.name)
+
             except ValueError:
                 print("ValueError occurred and handled ")
 
         def joined_current_year(self):
-            for key in data:
-                for value in data[key]:
-                    if value == 'Joining_Date':
-                        year = data[key][value].split('/')
-                        if len(year) != 3:
-                            print("You entered date in wrong format ")
-                        else:
-                            if int(year[-1]) == current_year:
-                                print(key)
-                            break
+            for object in data:
+                year = object.joining_date.split('/')
+                if len(year) != 3:
+                    print("You entered date in wrong format ")
+                else:
+                    if year[-1] == current_year:
+                        print(object.name)
+                    
 
         def employee_city(self):
             employee_by_city = input("Enter city to find employees ")
+            print(employee_by_city)
+                
+            for object in data:
+                if object.city == employee_by_city:
+                    print(object.name)
             
-            for key in data:
-                for value in data[key]:
-                    if value == 'City':
-                        if data[key][value] == employee_by_city:
-                            print(key)
-                        break
+            
 
         def current_bday_month(self):
-            for key in data:
-                for value in data[key]:
-                    if value == 'Dob':
-                        month = data[key][value].split('/')
-                        if len(month) != 3:
-                            print("You entered date in wrong format ")
-                        else:
-                            if int(month[1]) == current_month:
-                                print(f"{key}'s birthday is in current month ")
-                            break
+            for object in data:
+                month = object.dob.split('/')
+                if len(month) != 3:
+                    print("You entered date in wrong format ")
+                else:
+                    if int(month[1]) == current_month:
+                        print(f"{object.name}'s birthday is in current month ")
+                    
         
         def employee_by_age(self):
             limit = input("Enter limit of age to get employee whose age is under given age ")
-            for key in data:
-                for value in data[key]:
-                    if value == 'Dob':
-                        year = data[key][value].split('/')
-                        if len(year) != 3:
-                            print("You entered date in wrong format ")
-                        else:
-                            age = current_year - year
-                            if age < limit:
-                                print(key)
-                            break
+            for object in data:
+                year = object.dob.split('/')
+                if len(year) != 3:
+                    print("You entered date in wrong format ")
+                else:
+                    age = int(current_year) - int(year[-1])
+                    if age < int(limit):
+                        print(object.name)
 
 while True:
     print("---------------------------------------")
@@ -189,25 +177,53 @@ while True:
         break
     else:
         obj_manager = employee_manager()
-        if input_of_user == '1':
-            print(obj_manager.add_employee())
-        elif input_of_user == '2':
-            print(obj_manager.remove_employee())
-        elif input_of_user == '3':
-            obj_manager.all_employee_list()
-        elif input_of_user == '4':
-            obj_manager.employee_by_name()
-        elif input_of_user == '5':
-            obj_manager.employee_by_department()
-        elif input_of_user == '6':
-            obj_manager.employee_salary()
-        elif input_of_user == '7':
-            obj_manager.joined_current_year()
-        elif input_of_user == '8':
-            obj_manager.employee_city()     
-        elif input_of_user == '9':
-            obj_manager.current_bday_month()
-        elif input_of_user == '0':
-            obj_manager.employee_by_age()          
-        else:
-            print("Wrong entry! Please enter from above. ")
+        match input_of_user:
+            case '1':
+                print(obj_manager.add_employee())
+            case '2':
+                print(obj_manager.remove_employee())
+            case '3':
+                obj_manager.all_employee_list()
+            case '4':
+                obj_manager.employee_by_name()
+            case '5':
+                obj_manager.employee_by_department()
+            case '6':
+                obj_manager.employee_salary()
+            case '7':
+                obj_manager.joined_current_year()
+            case '8':
+                obj_manager.employee_city()     
+            case '9':
+                obj_manager.current_bday_month()
+            case '0':
+                obj_manager.employee_by_age()          
+            case _:
+                print("Wrong entry! Please enter from above. ")
+
+    # if input_of_user == 'quit':
+    #     break
+    # else:
+    #     obj_manager = employee_manager()
+    #     if input_of_user == '1':
+    #         print(obj_manager.add_employee())
+    #     elif input_of_user == '2':
+    #         print(obj_manager.remove_employee())
+    #     elif input_of_user == '3':
+    #         obj_manager.all_employee_list()
+    #     elif input_of_user == '4':
+    #         obj_manager.employee_by_name()
+    #     elif input_of_user == '5':
+    #         obj_manager.employee_by_department()
+    #     elif input_of_user == '6':
+    #         obj_manager.employee_salary()
+    #     elif input_of_user == '7':
+    #         obj_manager.joined_current_year()
+    #     elif input_of_user == '8':
+    #         obj_manager.employee_city()     
+    #     elif input_of_user == '9':
+    #         obj_manager.current_bday_month()
+    #     elif input_of_user == '0':
+    #         obj_manager.employee_by_age()          
+    #     else:
+    #         print("Wrong entry! Please enter from above. ")
