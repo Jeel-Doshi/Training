@@ -54,3 +54,148 @@ Output : Common divisor of two number (HCF)
 | player-1   |                                    |
 | player-2   |                                    |
 |            | Winner is Player-1 with 138 points |
+
+
+### Create a class for Users :
+### Username
+### account no
+### mobile no
+### Address
+### account balance
+### -> Create a class for user manager
+###     Manages user => Add new user, Get existing user, remove user
+### -> Create a class for ATM,
+### -> Enter account no and get user if not found then show a valid message
+### -> Show options for user operations like creating new users, View Balance, Deposit, Withdraw, Close account, etc...
+### -> Transaction charge: 0.5 for every operation
+### -> Account balance limit: 10000
+
+
+Input  : Number to perform operation
+
+Output : Details of operation performed
+
+```sh
+Hello..! Welcome to Banking Sector..!!                      
+----------------------------------------------------------------------------------------
+Press 1 to create new User 
+Press 2 to get existing user 
+Press 3 to remove a User 
+Press 4 to enter account number 
+Press 5 to view balance 
+Press 6 to deposit or withdraw amount 
+Press quit to exit 
+1
+----------------------------------------------------------------------------------------
+Enter username Tom
+Enter mobile number 9879879879
+Enter your address Rajkot
+----------------------------------------------------------------------------------------
+Enter amount for opening balance 12000
+----------------------------------------------------------------------------------------
+Your Account number is 11111 
+Welcome..! You are now the user of the Bank..! 
+----------------------------------------------------------------------------------------
+Press 1 to create new User 
+Press 2 to get existing user 
+Press 3 to remove a User 
+Press 4 to enter account number 
+Press 5 to view balance 
+Press 6 to deposit or withdraw amount 
+Press quit to exit 
+2
+----------------------------------------------------------------------------------------
+Existing users are as follows: 
+Tom
+
+----------------------------------------------------------------------------------------
+Press 1 to create new User 
+Press 2 to get existing user 
+Press 3 to remove a User 
+Press 4 to enter account number 
+Press 5 to view balance 
+Press 6 to deposit or withdraw amount 
+Press quit to exit 
+4
+----------------------------------------------------------------------------------------
+Enter account number 11111
+Your current balance is 12000 
+----------------------------------------------------------------------------------------
+Press 1 to create new User 
+Press 2 to get existing user 
+Press 3 to remove a User 
+Press 4 to enter account number 
+Press 5 to view balance 
+Press 6 to deposit or withdraw amount 
+Press quit to exit
+quit
+```
+
+### Create class Person:
+### - Name
+### - DOB
+### - City
+### - Contact No
+### Create class Employee (Inherit person class)
+### - employee id
+### - joining date
+### - salary
+### - department
+### - post
+### Employee manager class
+### - Add/Remove Employee, Get all employees list, get employee by his name, get all employees by his/her department
+### Task:
+### 1. Add a few employees
+### 2. Print all the employees
+### 3. Find an employee with the name
+### 4. Print all employees with department Finance
+### 5. Find all employees whose salary is greater than 50000
+### 6. Find all employees whose salary is between 50000-100000
+### 7. Find a list of employees who are joined in the current year
+### 8. Find all employees who are from Mirzapur
+### 9. Find employees whose birthday in the current month
+### 10. Find employees whose age is less than 30.
+
+Input and Output :
+
+```sh
+---------------------------------------
+Press 1 to create new employee 
+Press 2 to remove employee 
+Press 3 to get list of all employee 
+Press 4 to get employee by name 
+Press 5 to get employee by department 
+Press 6 to get employee by salary above or salary range 
+Press 7 to get employee who joined current year 
+Press 8 to get employee by city 
+Press 9 to get employee whose birthday is in current month 
+Press 0 to get employee by age 
+Press quit to exit 
+1
+---------------------------------------
+Enter name of employee - Tom
+Enter date of birth seperated with '/' in dd/mm/yy format - 03/04/1998
+Enter city - Mumbai
+Enter contact number - 9999999999
+Enter employee id - tom123
+Enter date of joining seperated with '/' in dd/mm/yyyy format - 07/01/2022
+Enter salary of employee - 5000
+Enter department - Finance
+Enter post of employee - Accountant
+---------------------------------------
+New employee successfully added..! 
+---------------------------------------
+Press 1 to create new employee 
+Press 2 to remove employee 
+Press 3 to get list of all employee 
+Press 4 to get employee by name 
+Press 5 to get employee by department 
+Press 6 to get employee by salary above or salary range 
+Press 7 to get employee who joined current year 
+Press 8 to get employee by city 
+Press 9 to get employee whose birthday is in current month 
+Press 0 to get employee by age 
+Press quit to exit 
+quit
+---------------------------------------
+```
