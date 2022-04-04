@@ -1,10 +1,10 @@
 # Replace the space character that occurs after a word ending with a or r with a newline character
-#       Sample input: area not an _a2_ roar took 22
-#       Sample output:
-#       area
-#       not a
-#       _a2_ roar
-#       took 22
+# Sample input: area not an _a2_ roar took 22
+# Sample output:
+# area
+# not a
+# _a2_ roar
+# took 22
 
 import re
 
