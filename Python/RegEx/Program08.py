@@ -5,11 +5,5 @@ import re
 
 input_str = 'firecatlioncatcatcatbearcatcatparrot'
 
-result = re.split(r'cat',input_str)
-
-while("" in result) :
-    result.remove("")
-
+result = re.split(r'(?:cat)+',input_str)
 print(result)
-
-# Done - check

@@ -8,5 +8,3 @@ string = "Hello..I am 21 years old. My bday is in 11th month. Also my fav number
 
 match = re.findall(regex,string)
 print(match)
-
-# Done

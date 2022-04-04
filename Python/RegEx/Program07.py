@@ -8,7 +8,14 @@
 
 import re
 
-input_str = 'area, not an _a2_ roar took 22'
+input_str = 'area not an _a2_ roar took 22'
+replace = re.findall(r"\b[A-Za-z]*a\b|\b[A-Za-z]*r\b", input_str)
+split_str = input_str.split(" ")
+result = ' '
 
-replaced = re.sub(r"(a|r)\b", "\n", input_str)
-print(replaced)
+for element in split_str:
+    result = result + element + " " 
+    if element in replace:
+        result = result + "\n" 
+   
+print(result) 

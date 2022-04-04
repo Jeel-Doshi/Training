@@ -6,5 +6,3 @@ string = 'Hello.. I am 21; years ^ old. My bday is $ in 11th month. Also % my fa
 
 replaced = re.sub("\W", " ", string)
 print(replaced)
-
-# Done - check 
